@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* Использование глобальных переменных Телеграм для базовых цветов. Чтобы приложение реагировало на изменение темы Телеграмма*/
 body{
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
