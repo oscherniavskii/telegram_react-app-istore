@@ -7,7 +7,6 @@ import ProductList from './components/ProductList/ProductList';
 import Form from './components/Form/Form';
 
 import './App.css';
-import Test from './components/Test/Test';
 
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
 			<Routes>
 				<Route index element={<ProductList />} />
 				<Route path='/form' element={<Form />} />
-				<Route path='/test' element={<Test />} />
 			</Routes>
 		</div>
 	);
