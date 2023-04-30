@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useTelegram } from './hooks/useTelegram';
 
 import Header from './components/Header/Header';
@@ -17,15 +17,13 @@ function App() {
 	}, [])
 
 	return (
-		<BrowserRouter>
-			<div className="App">
-				<Header />
-				<Routes>
-					<Route index element={<ProductList />} />
-					<Route path='/form' element={<Form />} />
-				</Routes>
-			</div>
-		</BrowserRouter>
+		<div className="App">
+			<Header />
+			<Routes>
+				<Route index element={<ProductList />} />
+				<Route path='/form' element={<Form />} />
+			</Routes>
+		</div>
 	);
 }
 
