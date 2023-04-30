@@ -1,14 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 
 import './form.css';
 
 
-const Form = (props) => {
+const Form = () => {
 	const [country, setCountry] = useState('');
 	const [street, setStreet] = useState('');
 	const [subject, setSubject] = useState('physical');
 	const { tg } = useTelegram();
+
+	// const onSendData = useCallback
+
+	// useEffect(() => {
+	// 	Telegram.WebApp.onEvent('mainButtonClicked', callback);
+	// }, [])
 
 	useEffect(() => {
 		//Изменение текста главной кнопки
