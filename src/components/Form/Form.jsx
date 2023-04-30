@@ -10,11 +10,22 @@ const Form = () => {
 	const [subject, setSubject] = useState('physical');
 	const { tg } = useTelegram();
 
-	// const onSendData = useCallback
+	const onSendData = useCallback(() => {
+		const data = {
+			country,
+			street,
+			subject
+		}
 
-	// useEffect(() => {
-	// 	Telegram.WebApp.onEvent('mainButtonClicked', callback);
-	// }, [])
+		tg.sendData(JSON.stringify(data));
+	}, [])
+
+	useEffect(() => {
+		tg.onEvent('mainButtonClicked', onSendData);
+		return () => {
+			tg.offEvent('mainButtonClicked', onSendData);
+		}
+	}, [])
 
 	useEffect(() => {
 		//Изменение текста главной кнопки
